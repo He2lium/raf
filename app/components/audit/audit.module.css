@@ -1,0 +1,157 @@
+.audit-wrapper {
+	position: relative;
+	padding-top: 63px;
+}
+
+.audit {
+	position: relative;
+	overflow: hidden;
+}
+
+.img-wrapper {
+	position: relative;
+	left: -158px;
+	width: 1116px;
+	height: 837px;
+}
+
+.img-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center center;
+}
+
+.img-wrapper::before {
+	content: '';
+	display: block;
+
+	position: absolute;
+	bottom: 24px;
+	left: 225px;
+
+	border-radius: 50%;
+
+	width: 500px;
+	aspect-ratio: 1/1;
+
+	background: var(--accent);
+	opacity: 0.1;
+
+	user-select: none;
+}
+
+.content {
+	position: absolute;
+	top: 49%;
+	right: 0;
+
+	transform: translateY(-50%);
+
+	display: flex;
+	flex-direction: column;
+	gap: 92px;
+
+	max-width: 710px;
+}
+
+.variants {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+
+	margin-left: -16px;
+	margin-top: -5px;
+}
+
+.var {
+	padding: 15px 30px;
+
+	border: 1px solid var(--accent);
+	border-radius: 40px;
+
+	font-size: 24px;
+	font-weight: 500;
+	letter-spacing: -1px;
+}
+
+.var.active {
+	background: var(--accent);
+	color: var(--accent-text);
+}
+
+@media screen and (max-width: 1200px) {
+	.audit-wrapper::before {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: 0;
+		background: white;
+		opacity: 0.5;
+		z-index: 1;
+	}
+
+	.content {
+		z-index: 1;
+	}
+
+	.content > h2 {
+		text-align: center;
+	}
+	.var {
+		background: var(--accent-text);
+	}
+
+	.img-wrapper {
+		height: 100vh;
+	}
+
+	.content {
+		gap: 50px;
+		width: 100%;
+		right: 50%;
+		transform: translateY(-50%) translateX(50%);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.img-wrapper {
+		height: 80vh;
+		left: -200px;
+	}
+
+	.img-wrapper::before {
+		width: 400px;
+		bottom: 38px;
+		left: 278px;
+	}
+
+	.container {
+		padding: 0;
+	}
+
+	.variants {
+		flex-wrap: wrap;
+		margin-left: 0;
+		padding: 0px 10px;
+	}
+
+	.var {
+		display: inline-block;
+		font-size: 20px;
+		padding: 12px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.img-wrapper {
+		height: 60vh;
+		left: -277px;
+	}
+
+	.img-wrapper::before {
+		width: 300px;
+		left: 341px;
+	}
+}
