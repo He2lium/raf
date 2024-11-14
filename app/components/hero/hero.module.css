@@ -282,12 +282,9 @@
 }
 
 @media screen and (max-width: 768px) {
-	.column:nth-child(2) {
-		display: none;
-	}
-
 	.content {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 	.column:nth-child(1) {
@@ -307,6 +304,26 @@
 @media screen and (max-width: 576px) {
 	.hero {
 		padding-top: 20px;
+	}
+
+	.image {
+		/* display: none; */
+		padding: 0;
+	}
+
+	.image img {
+		margin-top: 0;
+		bottom: -10px;
+
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center center;
+	}
+
+	.image-shadow div {
+		right: -222px;
+		width: 641px;
 	}
 
 	.title::before {
