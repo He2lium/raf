@@ -2,6 +2,7 @@
 	margin: 0 auto;
 	padding: 0 16px;
 	max-width: calc(1340px + (16px * 2));
+	margin-bottom: 30px;
 }
 
 .footer {

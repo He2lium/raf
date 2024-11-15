@@ -5,7 +5,6 @@
 
 .audit {
 	position: relative;
-	overflow: hidden;
 }
 
 .img-wrapper {
@@ -43,7 +42,7 @@
 
 .content {
 	position: absolute;
-	top: 49%;
+	top: 45%;
 	right: 0;
 
 	transform: translateY(-50%);
@@ -86,6 +85,10 @@
 		z-index: 1;
 	}
 
+	.audit-wrapper {
+		padding-top: 80px;
+	}
+
 	.content > h2 {
 		text-align: center;
 	}
@@ -95,6 +98,8 @@
 
 	.img-wrapper {
 		height: 100vh;
+		left: clamp(-19.188rem, -31.214rem + 53.45vw, 8.875rem);
+		/* -307 142 */
 	}
 
 	.content {
@@ -109,7 +114,7 @@
 @media screen and (max-width: 768px) {
 	.img-wrapper {
 		height: 80vh;
-		left: -200px;
+		/* left: -200px; */
 	}
 
 	.img-wrapper::before {
@@ -141,9 +146,13 @@
 }
 
 @media screen and (max-width: 576px) {
+	.audit-wrapper {
+		padding-top: 110px;
+	}
+
 	.img-wrapper {
 		height: 60vh;
-		left: -277px;
+		/* left: -277px; */
 	}
 
 	.content {
