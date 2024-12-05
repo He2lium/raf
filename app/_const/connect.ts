@@ -12,6 +12,6 @@ export const PAYLOAD = {
         name: 'Rafznaet',
         address: process.env.SMTP_LOGIN as string,
     },
-    to: 'johk2@yandex.ru',
+    to: 'info@reiterovich.online',
     subject: 'Rafznaet - Заявка на обратную связь',
 }
