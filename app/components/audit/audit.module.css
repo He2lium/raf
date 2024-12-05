@@ -5,13 +5,16 @@
 
 .audit {
 	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	scroll-margin-top: 30px;
 }
 
 .img-wrapper {
 	position: relative;
-	left: -158px;
-	width: 1116px;
-	height: 837px;
+	height: 100vh;
+	flex: auto;
 }
 
 .img-wrapper img {
@@ -26,12 +29,15 @@
 	display: block;
 
 	position: absolute;
-	bottom: 24px;
-	left: 225px;
+	inset: 0;
+	margin-inline: auto;
+	bottom: 20px;
+	top: auto;
+	z-index: -1;
 
 	border-radius: 50%;
 
-	width: 500px;
+	max-width: 500px;
 	aspect-ratio: 1/1;
 
 	background: var(--accent);
@@ -41,17 +47,14 @@
 }
 
 .content {
-	position: absolute;
-	top: 45%;
-	right: 0;
-
-	transform: translateY(-50%);
-
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 92px;
+}
 
-	max-width: 710px;
+.content h2 {
+	white-space: nowrap;
 }
 
 .variants {
@@ -59,9 +62,6 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 10px;
-
-	margin-left: -16px;
-	margin-top: -5px;
 }
 
 .var {
@@ -81,12 +81,24 @@
 }
 
 @media screen and (max-width: 1200px) {
+	.audit {
+		flex-direction: column-reverse;
+	}
+
 	.content {
 		z-index: 1;
 	}
 
-	.audit-wrapper {
-		padding-top: 80px;
+	.img-wrapper {
+		margin-top: -8px;
+	}
+
+	.variants {
+		position: absolute;
+		margin-inline: auto;
+		bottom: 24px;
+		left: 0;
+		right: 0;
 	}
 
 	.content > h2 {
@@ -95,32 +107,11 @@
 	.var {
 		background: var(--accent-text);
 	}
-
-	.img-wrapper {
-		height: 100vh;
-		left: clamp(-19.188rem, -31.214rem + 53.45vw, 8.875rem);
-		/* -307 142 */
-	}
-
-	.content {
-		gap: 491px;
-		top: 52%;
-		width: 100%;
-		right: 50%;
-		transform: translateY(-50%) translateX(50%);
-	}
 }
 
 @media screen and (max-width: 768px) {
 	.img-wrapper {
 		height: 80vh;
-		/* left: -200px; */
-	}
-
-	.img-wrapper::before {
-		width: 400px;
-		bottom: 38px;
-		left: 278px;
 	}
 
 	.container {
@@ -130,38 +121,12 @@
 	.variants {
 		flex-wrap: wrap;
 		margin-left: 0;
-		padding: 0px 10px;
+		padding: 0 10px;
 	}
 
 	.var {
 		display: inline-block;
 		font-size: 20px;
 		padding: 12px;
-	}
-
-	.content {
-		gap: 407px;
-		top: 53%;
-	}
-}
-
-@media screen and (max-width: 576px) {
-	.audit-wrapper {
-		padding-top: 110px;
-	}
-
-	.img-wrapper {
-		height: 60vh;
-		/* left: -277px; */
-	}
-
-	.content {
-		top: 47%;
-		gap: 330px;
-	}
-
-	.img-wrapper::before {
-		width: 300px;
-		left: 341px;
 	}
 }

@@ -19,9 +19,9 @@ export default function Home() {
 		<>
 			<Header />
 			<Hero />
-			<Intro />
 			<Audit />
 			<Benefits />
+			<Intro />
 			<Tariffs />
 			<Banner />
 			<Cta />

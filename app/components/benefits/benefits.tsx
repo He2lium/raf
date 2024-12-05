@@ -9,13 +9,10 @@ export const Benefits = () => {
 				<div className={styles.intro}>
 					<div className={styles['top']}>
 						<div className={`${styles['row-1']}`}>
-							<h2 className='title-1'>Вы можете получить</h2>
+							<h2 className='title-1'>Бонусы к курсу</h2>
 							<div className={styles.block}>
 								<div className={styles['img-wrapper']}>
 									<Image src='/cron.png' alt='црон' width={206} height={66} />
-									<p className='small-text'>
-										Центр реализации объектов недвижимости
-									</p>
 								</div>
 								<h4 className={'title-3'}>
 									Мы рады предоставить вам доступ к ЦРОН
@@ -38,9 +35,6 @@ export const Benefits = () => {
 									width={201}
 									height={35}
 								/>
-								<p className='small-text'>
-									Центр реализации объектов недвижимости
-								</p>
 							</div>
 							<p className={styles['card-text']}>
 								Предоставляет доступ к обширной базе арендаторов, объектов
@@ -91,9 +85,7 @@ export const Benefits = () => {
 								Юридическая помощь
 							</h4>
 							<p className={styles['card-text']}>
-								Вопросы, касающиеся организации сделки. готовые шаблоны типажных
-								документов для закрытия сделки ( виды договоров аренды,
-								купли-продажи, агентские договоры и другие.) 
+								Вопросы, касающиеся организации сделки. Готовые шаблоны всех типовых документов для закрытия сделки.
 							</p>
 						</div>
 					</div>

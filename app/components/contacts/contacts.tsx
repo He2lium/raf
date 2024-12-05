@@ -5,7 +5,7 @@ import styles from './contacts.module.css';
 export const Contacts = () => {
 	return (
 		<section className='container'>
-			<div className={styles['contacts']}>
+			<div className={styles['contacts']} id={'contacts'}>
 				<h2 className='title-1'>Контакты</h2>
 				<div className={styles['info']}>
 					<a className={styles['tel']} href='tel:+79281092221'>

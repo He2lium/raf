@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
+import audit from '@/public/audit.png'
 
 import styles from './audit.module.css';
 
@@ -7,9 +7,9 @@ export const Audit = () => {
 	return (
 		<section className={styles['audit-wrapper']}>
 			<div className={`container ${styles['container']}`}>
-				<div className={styles.audit}>
+				<div className={styles.audit}  id={'for-who'}>
 					<div className={styles['img-wrapper']}>
-						<Image src='/audit.png' alt='audit' fill />
+						<Image src={audit} alt='audit' />
 					</div>
 					<div className={styles.content}>
 						<h2 className='title-1'>Кому подойдет?</h2>

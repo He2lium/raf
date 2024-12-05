@@ -8,7 +8,7 @@
 }
 
 .title-wrapper {
-	position: absolute;
+	position: relative;
 	z-index: 1;
 }
 
@@ -19,11 +19,15 @@
 .title {
 	font-family: var(--font-oswald);
 	color: var(--title);
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 110%;
-	font-size: 97px;
-	letter-spacing: -5px;
+	font-size: 92px;
+	letter-spacing: -4px;
 	text-transform: uppercase;
+}
+
+.title-break {
+	display: none;
 }
 
 .title::before {
@@ -43,7 +47,7 @@
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
 
-	margin-top: 113px;
+	margin-top: 10px;
 }
 
 .column {
@@ -54,11 +58,11 @@
 }
 
 .column:nth-child(1) {
-	flex: 1 0 651px;
+	flex: 1;
 }
 
 .column:nth-child(2) {
-	flex: 0 1;
+	flex: 1;
 }
 
 .blocks-sm {
@@ -74,15 +78,16 @@
 
 .image {
 	position: relative;
-	max-height: 644px;
+	height: 100%;
 	background: var(--foreground);
+	overflow: visible;
 }
 
 .image > img {
-	position: relative;
+	position: absolute;
 	z-index: 2;
-	margin-top: -105px;
-	margin-left: 63px;
+	inset: 0;
+	margin-inline: auto;
 }
 
 .image-shadow {
@@ -123,7 +128,7 @@
 }
 
 .block > p + p {
-	margin-top: 27px;
+	margin-top: 24px;
 }
 
 .block-sm {
@@ -179,7 +184,6 @@
 
 	background: var(--accent);
 	color: var(--accent-text);
-	cursor: pointer;
 }
 
 .button:hover {
@@ -190,8 +194,16 @@
 }
 
 @media screen and (max-width: 1351px) {
-	.content {
-		margin-top: 226px;
+	.title {
+		font-size: 80px;
+	}
+
+	.title::before {
+		width: 280px;
+	}
+
+	.title-break {
+		display: block;
 	}
 
 	.image {
@@ -216,26 +228,8 @@
 		padding-top: 40px;
 	}
 
-	.block-title {
-		font-size: 24px;
-	}
-
-	.column:nth-child(1) {
-		min-width: 507px;
-		flex: 1;
-	}
-
-	.image > img {
-		left: 43%;
-	}
-}
-
-@media screen and (max-width: 992px) {
-	.title-wrapper {
-		position: static;
-	}
 	.title {
-		font-size: 70px;
+		font-size: 64px;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
@@ -244,12 +238,6 @@
 	.title::before {
 		width: 250px;
 		margin-right: 10px;
-	}
-
-	.content {
-		margin-top: 20px;
-		display: grid;
-		grid-template-columns: 2fr 3fr;
 	}
 
 	.blocks-sm {
@@ -266,14 +254,28 @@
 		aspect-ratio: auto;
 	}
 
-	.column:nth-child(1) {
-		min-width: 0;
-		width: 400px;
+	.block-title {
+		font-size: 24px;
 	}
 
 	.column:nth-child(2) {
 		margin-top: auto;
 		overflow: hidden;
+	}
+
+	.image > img {
+		left: 43%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.content {
+		display: grid;
+		grid-template-columns: 3fr 4fr;
+	}
+
+	.block > p {
+		font-size: 18px;
 	}
 
 	.image > img {

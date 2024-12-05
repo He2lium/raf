@@ -35,7 +35,7 @@ export const Intro = () => {
 							height={24}
 						/>
 						<h5 className={styles['card-title']}>
-							50 бесплатный объявлений на СП
+							50 бесплатных объявлений на СП
 						</h5>
 					</div>
 					<div className={styles.card}>
@@ -46,7 +46,7 @@ export const Intro = () => {
 							height={24}
 						/>
 						<h5 className={styles['card-title']}>
-							Рабочее пространство где удобно работать
+							Рабочее пространство, где удобно работать
 						</h5>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ export const Intro = () => {
 							курс!
 						</h4>
 						<div className={styles['button-wrapper']}>
-							<a href='#' className={styles['call-button']}>
+							<a href='#tariffs' className={styles['call-button']}>
 								Посмотреть тарифы
 							</a>
 							<div className={styles['smile-wrapper']}>

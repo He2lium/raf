@@ -13,7 +13,7 @@ export const EndBanner = () => {
 					<p className={styles['subtitle']}>
 						Стань лушчим агентом по недвижимости в мире!
 					</p>
-					<a href='#' className={styles['btn']}>
+					<a href='#tariffs' className={styles['btn']}>
 						Выбрать курс!
 					</a>
 					<div className={styles['img-wrapper']}>
