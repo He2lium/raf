@@ -37,7 +37,7 @@ const modules = {
     },
     3: {
         title: "Работа с документами",
-        points: documents.map((document, index) => `3.${document}`)
+        points: documents.map((document) => `3.${document}`)
     }
 }
 

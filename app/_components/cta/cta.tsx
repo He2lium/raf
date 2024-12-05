@@ -17,7 +17,7 @@ export const Cta = () => {
         handleSubmit,
         reset,
         getValues,
-        formState: {isSubmitting, errors},
+        formState: {isSubmitting},
     } = useForm<FeedbackDto>()
 
     const onSubmit = () => {
