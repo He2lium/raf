@@ -1,19 +1,25 @@
+'use client'
+
 import Image from 'next/image';
 import hero from '@/public/hero.png'
 
+import {motion} from 'framer-motion';
 import styles from './hero.module.css';
+import HeroTitle from "@/app/_components/hero/hero-title";
 
 export const Hero = () => {
     return (
         <div className='container'>
             <section className={styles.hero}>
-                <div className={styles['title-wrapper']}>
-                    <h1 className={styles.title}>Научись зарабатывать<br className={styles['title-break']}/> на коммерческой недвижимости</h1>
-                </div>
+                <HeroTitle/>
                 <div className={styles.content}>
                     <div className={styles.column}>
                         <div className={styles['blocks-sm']}>
-                            <div className={`${styles.block} ${styles['block-sm']}`}>
+                            <motion.div
+                                className={`${styles.block} ${styles['block-sm']}`}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1, transition: {delay: 5}}}
+                            >
                                 <svg
                                     width='30'
                                     height='30'
@@ -28,10 +34,13 @@ export const Hero = () => {
                                         fill='currentColor'
                                     />
                                 </svg>
-
                                 <h4 className={styles['block-title']}>Быстро</h4>
-                            </div>
-                            <div className={`${styles.block} ${styles['block-sm']}`}>
+                            </motion.div>
+                            <motion.div
+                                className={`${styles.block} ${styles['block-sm']}`}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1, transition: {delay: 5.5}}}
+                            >
                                 <svg
                                     width='30'
                                     height='30'
@@ -48,8 +57,12 @@ export const Hero = () => {
                                 </svg>
 
                                 <h4 className={styles['block-title']}>Легко</h4>
-                            </div>
-                            <div className={`${styles.block} ${styles['block-sm']}`}>
+                            </motion.div>
+                            <motion.div
+                                className={`${styles.block} ${styles['block-sm']}`}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1, transition: {delay: 6}}}
+                            >
                                 <svg
                                     width='30'
                                     height='30'
@@ -70,9 +83,13 @@ export const Hero = () => {
                                 </svg>
 
                                 <h4 className={styles['block-title']}>В результат</h4>
-                            </div>
+                            </motion.div>
                         </div>
-                        <div className={`${styles.block}`}>
+                        <motion.div
+                            className={`${styles.block}`}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1, transition: {delay: 5}}}
+                        >
                             <p>
                                 Наша команда стремится не просто передать вам теоретические
                                 знания, а научить вас применять их на практике.
@@ -98,18 +115,18 @@ export const Hero = () => {
                                     height={66}
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className={styles.column}>
-                        <div className={`${styles.block} ${styles.image}`}>
-                            <Image
-                                src={hero}
-                                alt='агент недвижимости'
-                            />
+                        <motion.div
+                            className={`${styles.block} ${styles.image}`}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1, transition: {delay: 5}}}
+                        >
                             <div className={styles['image-shadow']}>
                                 <div/>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>

@@ -13,22 +13,21 @@ import {
     Reviews,
     Tariffs,
 } from './_components';
+import FollowUp from "@/app/_components/intro/follow-up";
 
 export default function Home() {
     return (
         <>
             <Header/>
             <Hero/>
-            <Audit/>
-            <Benefits/>
-            <Intro/>
+            <FollowUp />
             <Tariffs/>
-            <Banner/>
+            <Benefits/>
+            <Audit/>
             <Cta/>
             <Reviews/>
             <Faq/>
             <EndBanner/>
-            <Contacts/>
             <Footer/>
         </>
     );

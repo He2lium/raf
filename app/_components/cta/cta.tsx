@@ -1,13 +1,13 @@
 'use client'
 
 import {useState} from 'react';
-import Image from 'next/image';
 import styles from './cta.module.css';
 import {useForm} from "react-hook-form";
 import {FeedbackDto} from "@/app/_types/feedback.types";
 import toast from "react-hot-toast";
 import {sendFeedback} from "@/app/_actions/sendFeedback";
 import {InvisibleSmartCaptcha} from "@/app/_components";
+import {MotionImage} from "@/app/_components/motion-image/motion-image";
 
 export const Cta = () => {
     const [visible, setVisible] = useState(false)
@@ -85,7 +85,18 @@ export const Cta = () => {
                         </a>
                     </div>
                     <div className={styles['image-wrapper']}>
-                        <Image src='/cta.png' alt='cta' fill/>
+                        <MotionImage
+                            src='/cta.png'
+                            alt='cta'
+                            fill
+                            animate={{rotate: [5, -5, 5]}}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 2,
+                                ease: "easeInOut",
+                            }}
+                        />
                     </div>
                 </div>
                 <div className={styles['col']}>

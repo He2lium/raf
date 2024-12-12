@@ -1,17 +1,17 @@
 'use client'
 
 import React, {useMemo, useState} from 'react';
-import Image from 'next/image';
 
 import styles from './tariffs.module.css';
+import {MotionImage} from "@/app/_components/motion-image/motion-image";
 
 const documents = [
     "1. Типовые договоры. Особенности, виды.",
-    "2. Типовые документы на объект Коммерческая недвижимости.",
+    "2. Типовые документы на объект коммерческой недвижимости.",
     "3. Агентские договоры, варианты работы."
 ]
 
-const modules = {
+const commerceModules = {
     1: {
         title: "Коммерческая Недвижимость и ее особенности",
         points: [
@@ -41,21 +41,72 @@ const modules = {
     }
 }
 
+const residentialModules = {
+    1: {
+        title: "Что такое жилая недвижимость: виды и характеристики",
+        points: [
+            "1.1. Понятие объекта недвижимости.",
+            "1.2. Чем жилая недвижимость отличается от нежилой.",
+            "1.3. Дополнительные виды недвижимости.",
+            "1.4. Работа с продавцом."
+        ]
+    },
+    2: {
+        title: "Работа. Стратегия",
+        points: [
+            "2.1. Подготовка к показу объекта недвижимости.",
+            "2.2. Показ объекта.",
+            "2.3. Мотив. Потребность. Бонусы."
+        ]
+    },
+    3: {
+        title: "Скрипты",
+        points: [
+            "3.1. Скрипты приема звонка от покупателя на поиск квартиры.",
+            "3.2. Скрипт для обработки сомнений клиента о необходимости личной встречи.",
+            "3.3. Скрипт для обработки финансовых возражений Заказчиков/Клиентов в сделках с недвижимостью.",
+            "3.4. Возможные возражения и работа с ними."
+        ]
+    },
+    4: {
+        title: "Работа с документами",
+        points: [
+            "4.1. Чек-лист «Подготовка к сделке с покупателем»."
+        ]
+    }
+}
+
 export const Tariffs = () => {
-    const [active, setActive] = useState<1 | 2 | 3>(1)
-    const firstCol = useMemo(() => {
-        const points = modules[active].points
+    const [commerceActive, setCommerceActive] = useState<1 | 2 | 3>(1)
+    const [residentialActive, setResidentialActive] = useState<1 | 2 | 3 | 4>(1)
+
+    const commerceFirstCol = useMemo(() => {
+        const points = commerceModules[commerceActive].points
         const length = points.length
 
-        return points.slice(0, Math.floor(length / 2) + 1)
-    }, [active])
+        return points.slice(0, Math.round(length / 2))
+    }, [commerceActive])
 
-    const secondCol = useMemo(() => {
-        const points = modules[active].points
+    const commerceSecondCol = useMemo(() => {
+        const points = commerceModules[commerceActive].points
         const length = points.length
 
-        return points.slice(Math.floor(length / 2) + 1)
-    }, [active])
+        return points.slice(Math.round(length / 2))
+    }, [commerceActive])
+
+    const residentialFirstCol = useMemo(() => {
+        const points = residentialModules[residentialActive].points
+        const length = points.length
+
+        return points.slice(0, Math.round(length / 2))
+    }, [residentialActive])
+
+    const residentialSecondCol = useMemo(() => {
+        const points = residentialModules[residentialActive].points
+        const length = points.length
+
+        return points.slice(Math.round(length / 2))
+    }, [residentialActive])
 
     return (
         <section className='container'>
@@ -63,7 +114,7 @@ export const Tariffs = () => {
                 <div className={styles['row-1']}>
                     <h2 className='title-1'>Тарифы</h2>
                     <div className={styles['modules-wrapper']}>
-                        <article className={styles['card']}>
+                        <article className={styles['card__1']}>
                             <p className={styles['card-subtitle']}>Твой старт</p>
                             <h3 className={`${styles['card-title']} title-2`}>
                                 Коммерческая недвижимость
@@ -78,35 +129,102 @@ export const Tariffs = () => {
                                 </div>
                             </div>
                         </article>
-                        <div className={styles['modules']}>
+                        <div className={styles['modules__1']}>
                             {[1, 2, 3].map((item) => (
-                                <div key={item} onClick={() => setActive(item as 1 | 2 | 3)}
-                                     className={`${styles['module']} ${active === item ? styles['module-active'] : ''}`}>
+                                <div key={item} onClick={() => setCommerceActive(item as 1 | 2 | 3)}
+                                     className={`${styles['module']} ${commerceActive === item ? styles['module-active'] : ''}`}>
                                     Модуль {item}
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className={styles['image-wrapper']}>
-                        <Image src='/tariffs.png' alt='tariffs' fill/>
+                    <div className={styles['image-wrapper__1']}>
+                        <MotionImage
+                            src='/tariffs.png'
+                            alt='tariffs'
+                            fill
+                            animate={{rotate: [10, -10, 10]}}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 2,
+                                ease: "easeInOut",
+                            }}
+                        />
                     </div>
                 </div>
                 <div className={styles['list']}>
-                    <h3 className={styles['list-title']}>{modules[active].title}</h3>
+                    <h3 className={styles['list-title']}>{commerceModules[commerceActive].title}</h3>
                     <div className={styles['list-col']}>
-                        {firstCol.map((item, i) => (
+                        {commerceFirstCol.map((item, i) => (
                             <p key={i}>{item}</p>
                         ))}
                     </div>
                     <div className={styles['list-col']}>
-                        {secondCol.map((item, i) => (
+                        {commerceSecondCol.map((item, i) => (
                             <p key={i + 10}>{item}</p>
                         ))}
                     </div>
-                    {active === 3 && <a href={'#documents'} className={styles['list-button']}>Купить отдельно</a>}
+                    {commerceActive === 3 &&
+                        <a href={'#documents'} className={styles['list-button']}>Купить отдельно</a>}
+                </div>
+                <div className={`${styles['row-1']} ${styles['residential']}`}>
+                    <div style={{visibility: 'hidden'}} className={'title-1'} aria-hidden={'true'}>hidden</div>
+                    <div className={styles['image-wrapper__2']}>
+                        <MotionImage
+                            src='/tariffs-smile.png'
+                            alt='tariffs'
+                            fill
+                            animate={{rotate: [10, -10, 10]}}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 2,
+                                ease: "easeInOut",
+                            }}
+                        />
+                    </div>
+                    <div className={styles['modules-wrapper']}>
+                        <article className={styles['card__2']}>
+                            <p className={styles['card-subtitle']}>Твой старт</p>
+                            <h3 className={`${styles['card-title']} title-2`}>
+                                Жилая недвижимость
+                            </h3>
+                            <div className={styles['card-price']}>
+                                <a href='#' className={styles['card-btn']}>
+                                    Купить
+                                </a>
+                                <div className={styles['card-prices']}>
+                                    <span className={styles['card-old-price']}>49 378 ₽</span>
+                                    <span className={styles['card-new-price']}>32 478 ₽</span>
+                                </div>
+                            </div>
+                        </article>
+                        <div className={styles['modules__2']}>
+                            {[1, 2, 3, 4].map((item) => (
+                                <div key={item} onClick={() => setResidentialActive(item as 1 | 2 | 3 | 4)}
+                                     className={`${styles['module']} ${residentialActive === item ? styles['module-active'] : ''}`}>
+                                    Модуль {item}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className={styles['list']}>
+                    <h3 className={styles['list-title']}>{residentialModules[residentialActive].title}</h3>
+                    <div className={styles['list-col']}>
+                        {residentialFirstCol.map((item, i) => (
+                            <p key={i}>{item}</p>
+                        ))}
+                    </div>
+                    <div className={styles['list-col']}>
+                        {residentialSecondCol.map((item, i) => (
+                            <p key={i + 10}>{item}</p>
+                        ))}
+                    </div>
                 </div>
                 <div className={`${styles['modules-wrapper']} ${styles['modules-wrapper-flex']}`}>
-                    <article className={`${styles['card']}`}>
+                    <article className={`${styles['card__1']}`}>
                         <p className={styles['card-subtitle']} id={'documents'}>Документы</p>
                         <h3 className={`${styles['card-title']} title-2`}>
                             Шаблоны всех типовых документов

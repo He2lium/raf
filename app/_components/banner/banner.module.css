@@ -1,5 +1,5 @@
 .banner-wrapper {
-	padding-top: 150px;
+	margin-top: 40px;
 }
 
 .banner {
@@ -73,10 +73,6 @@
 }
 
 @media screen and (max-width: 1351px) {
-	.banner-wrapper {
-		padding-top: 100px;
-	}
-
 	.banner-img {
 		transform: translateY(-50%) scale(0.9);
 	}
@@ -90,13 +86,11 @@
 }
 
 @media screen and (max-width: 992px) {
-	.banner-wrapper {
-		padding-top: 68px;
-	}
-
 	.banner {
 		display: flex;
 		flex-direction: column;
+
+		padding: 30px;
 	}
 
 	.banner-img {
@@ -114,7 +108,7 @@
 
 @media screen and (max-width: 576px) {
 	.banner {
-		padding: 28px;
+		padding: 30px;
 	}
 
 	.banner-discount {

@@ -1,0 +1,110 @@
+.title-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-family: var(--font-oswald);
+    color: var(--title);
+    font-weight: 600;
+    line-height: 110%;
+    font-size: 92px;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    white-space: pre-line;
+}
+
+.title::before {
+    content: '';
+    display: inline-block;
+    margin-right: 20px;
+    width: 341px;
+    aspect-ratio: 341 / 87;
+    background-image: url('/hero-title-icon.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1351px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .title::before {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 72px;
+    }
+
+    .title::before {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    .title {
+        font-size: 64px;
+    }
+
+    .title::before {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .title {
+        font-size: 54px;
+    }
+
+    .title::before {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title::before {
+        display: block;
+        margin-bottom: 10px;
+        width: 180px;
+    }
+
+    .title {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .title {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    .title::before {
+        width: 160px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .title {
+        font-size: 22px;
+    }
+}
