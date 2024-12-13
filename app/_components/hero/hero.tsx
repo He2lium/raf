@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image';
-import hero from '@/public/hero.png'
 
 import {motion} from 'framer-motion';
 import styles from './hero.module.css';
