@@ -45,7 +45,7 @@
 .card-title {
     margin-top: 15px;
 
-    color: var(--accent-text);
+    color: var(--accent-text) !important;
 }
 
 .card-price {
