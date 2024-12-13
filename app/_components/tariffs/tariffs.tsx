@@ -129,7 +129,7 @@ export const Tariffs = () => {
                                 </a>
                                 <div className={styles['card-prices']}>
                                     <span className={styles['card-old-price']}>20 000 ₽</span>
-                                    <span className={styles['card-new-price']}>10 000 ₽</span>
+                                    <span className={styles['card-new-price']}>7 000 ₽</span>
                                 </div>
                             </div>
                         </article>
@@ -203,8 +203,8 @@ export const Tariffs = () => {
                                     Купить
                                 </a>
                                 <div className={styles['card-prices']}>
-                                    <span className={styles['card-old-price']}>20 000 ₽</span>
-                                    <span className={styles['card-new-price']}>10 000 ₽</span>
+                                    <span className={styles['card-old-price']}>10 000 ₽</span>
+                                    <span className={styles['card-new-price']}>5 000 ₽</span>
                                 </div>
                             </div>
                         </article>

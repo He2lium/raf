@@ -34,7 +34,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-    title: 'Курсы - Сдам Продам',
+    title: 'Раф знает!',
     description: 'Научись зарабатывать на коммерческой недвижимости!',
 };
 
