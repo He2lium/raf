@@ -3,6 +3,8 @@
 import {useCallback, useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import styles from './header.module.css';
+import Image from "next/image";
+import logo from '@/public/logo.png'
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +47,7 @@ export const Header = () => {
                 <div className={`${styles.header}`}>
                     <nav className={styles.navbar}>
                         <Link href='/' className={'logo'}>
-                            lOGO
+                            <Image src={logo} alt={'лого РАФ'} width={60} height={60}/>
                         </Link>
                         <ul className={`${styles.navmenu} ${isOpen ? styles.active : ''}`}>
                             <li className={styles.navitem}>

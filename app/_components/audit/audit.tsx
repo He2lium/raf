@@ -13,7 +13,7 @@ export const Audit = () => {
                         <MotionImage
                             src={audit}
                             alt='audit'
-                            animate={{rotate: [5, -5, 5]}}
+                            animate={{rotate: [3, -3, 3]}}
                             transition={{
                                 repeat: Infinity,
                                 repeatType: "loop",

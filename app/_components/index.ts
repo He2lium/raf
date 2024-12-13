@@ -11,4 +11,4 @@ export {Faq} from './faq/faq';
 export {EndBanner} from './end-banner/end-banner';
 export {Contacts} from './contacts/contacts';
 export {Footer} from './footer/footer';
-export {InvisibleSmartCaptcha} from './captcha/captcha'
+export {InvisibleSmartCaptcha} from './captcha/captcha';

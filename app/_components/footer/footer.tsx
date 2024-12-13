@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './footer.module.css';
+import Image from "next/image";
+import logo from "@/public/logo.png";
 
 export const Footer = () => {
     return (
         <footer className={styles['footer-container']}>
             <nav className={styles['footer']}>
                 <Link href='/' className={'logo'}>
-                    lOGO
+                    <Image src={logo} alt={'лого РАФ'} width={60} height={60}/>
                 </Link>
                 <ul className={styles['menu']}>
                     <li className={styles['item']}>

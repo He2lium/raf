@@ -4,6 +4,7 @@ import {Oswald} from 'next/font/google';
 import './globals.css';
 import {Toaster} from 'react-hot-toast'
 import {Footer, Header} from "@/app/_components";
+import YandexMetrica from "@/app/_components/yandex-metrica/yandex-metrica";
 
 const gilroy = localFont({
     src: [
@@ -47,15 +48,18 @@ export default function RootLayout({
         <body
             className={`${gilroy.variable} ${moderustic.variable} ${oswald.variable}`}
         >
-        <Toaster/>
-        <div className={'app'}>
-            <Header/>
-            <main className={'app-content'}>
-                {children}
-            </main>
-            <Footer/>
-        </div>
+        <YandexMetrica>
+            <Toaster/>
+            <div className={'app'}>
+                <Header/>
+                <main className={'app-content'}>
+                    {children}
+                </main>
+                <Footer/>
+            </div>
+        </YandexMetrica>
         </body>
         </html>
-    );
+    )
+        ;
 }

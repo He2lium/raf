@@ -4,6 +4,7 @@ import React, {useMemo, useState} from 'react';
 
 import styles from './tariffs.module.css';
 import {MotionImage} from "@/app/_components/motion-image/motion-image";
+import {useMetrica} from "next-yandex-metrica";
 
 const documents = [
     "1. Типовые договоры. Особенности, виды.",
@@ -77,6 +78,7 @@ const residentialModules = {
 }
 
 export const Tariffs = () => {
+    const {reachGoal} = useMetrica()
     const [commerceActive, setCommerceActive] = useState<1 | 2 | 3>(1)
     const [residentialActive, setResidentialActive] = useState<1 | 2 | 3 | 4>(1)
 
@@ -121,12 +123,13 @@ export const Tariffs = () => {
                             </h3>
                             <div className={styles['card-price']}>
                                 <a href='https://kyrs1.skillspace.ru/l/tvoj-start-commercial-nedvizimost'
-                                   target={'_blank'} className={styles['card-btn']}>
+                                   target={'_blank'} onClick={() => reachGoal('cta-commerce-click')}
+                                   className={styles['card-btn']}>
                                     Купить
                                 </a>
                                 <div className={styles['card-prices']}>
-                                    <span className={styles['card-old-price']}>49 378 ₽</span>
-                                    <span className={styles['card-new-price']}>32 478 ₽</span>
+                                    <span className={styles['card-old-price']}>20 000 ₽</span>
+                                    <span className={styles['card-new-price']}>10 000 ₽</span>
                                 </div>
                             </div>
                         </article>
@@ -144,7 +147,7 @@ export const Tariffs = () => {
                             src='/tariffs.png'
                             alt='tariffs'
                             fill
-                            animate={{rotate: [10, -10, 10]}}
+                            animate={{rotate: [3, -3, 3]}}
                             transition={{
                                 repeat: Infinity,
                                 repeatType: "loop",
@@ -176,7 +179,7 @@ export const Tariffs = () => {
                             src='/tariffs-smile.png'
                             alt='tariffs'
                             fill
-                            animate={{rotate: [10, -10, 10]}}
+                            animate={{rotate: [3, -3, 3]}}
                             transition={{
                                 repeat: Infinity,
                                 repeatType: "loop",
@@ -194,12 +197,14 @@ export const Tariffs = () => {
                             <div className={styles['card-price']}>
                                 <a href='https://kyrs1.skillspace.ru/l/tvoj-start-zilaa-nedvizimost-4f75ae'
                                    target={'_blank'}
-                                   className={styles['card-btn']}>
+                                   className={styles['card-btn']}
+                                   onClick={() => reachGoal('cta-residential-click')}
+                                >
                                     Купить
                                 </a>
                                 <div className={styles['card-prices']}>
-                                    <span className={styles['card-old-price']}>49 378 ₽</span>
-                                    <span className={styles['card-new-price']}>32 478 ₽</span>
+                                    <span className={styles['card-old-price']}>20 000 ₽</span>
+                                    <span className={styles['card-new-price']}>10 000 ₽</span>
                                 </div>
                             </div>
                         </article>
@@ -234,12 +239,14 @@ export const Tariffs = () => {
                         </h3>
                         <div className={styles['card-price']}>
                             <a href='https://kyrs1.skillspace.ru/l/obrazcy-dokumentov-dla-raboty-733d15'
-                               target={'_blank'} className={styles['card-btn']}>
+                               target={'_blank'} className={styles['card-btn']}
+                               onClick={() => reachGoal('cta-documents-click')}
+                            >
                                 Купить
                             </a>
                             <div className={styles['card-prices']}>
-                                <span className={styles['card-old-price']}>3 490 ₽</span>
-                                <span className={styles['card-new-price']}>990 ₽</span>
+                                <span className={styles['card-old-price']}>1 000 ₽</span>
+                                <span className={styles['card-new-price']}>550 ₽</span>
                             </div>
                         </div>
                     </article>
