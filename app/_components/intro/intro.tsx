@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 import styles from './intro.module.css';
@@ -6,7 +5,9 @@ import styles from './intro.module.css';
 export const Intro = () => {
     return (
         <section className={styles.intro}>
-            <h3 className='title-2'>Как работает Сдам Продам?</h3>
+            <div className={styles['title-wrapper']}>
+                <h3 className='title-2'>Как работает Сдам Продам?</h3>
+            </div>
             <div className={styles.cards}>
                 <div className={styles.card}>
                     <Image
@@ -46,6 +47,8 @@ export const Intro = () => {
                     </h5>
                 </div>
             </div>
+            <a className={styles['call-button']} target={'_blank'} href={'https://sdam-prodam.com'}>На сайт Сдам
+                Продам</a>
         </section>
     );
 };

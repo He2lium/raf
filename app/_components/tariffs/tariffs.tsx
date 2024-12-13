@@ -120,7 +120,8 @@ export const Tariffs = () => {
                                 Коммерческая недвижимость
                             </h3>
                             <div className={styles['card-price']}>
-                                <a href='#' className={styles['card-btn']}>
+                                <a href='https://kyrs1.skillspace.ru/l/tvoj-start-commercial-nedvizimost'
+                                   target={'_blank'} className={styles['card-btn']}>
                                     Купить
                                 </a>
                                 <div className={styles['card-prices']}>
@@ -191,7 +192,9 @@ export const Tariffs = () => {
                                 Жилая недвижимость
                             </h3>
                             <div className={styles['card-price']}>
-                                <a href='#' className={styles['card-btn']}>
+                                <a href='https://kyrs1.skillspace.ru/l/tvoj-start-zilaa-nedvizimost-4f75ae'
+                                   target={'_blank'}
+                                   className={styles['card-btn']}>
                                     Купить
                                 </a>
                                 <div className={styles['card-prices']}>
@@ -230,7 +233,8 @@ export const Tariffs = () => {
                             Шаблоны всех типовых документов
                         </h3>
                         <div className={styles['card-price']}>
-                            <a href='#' className={styles['card-btn']}>
+                            <a href='https://kyrs1.skillspace.ru/l/obrazcy-dokumentov-dla-raboty-733d15'
+                               target={'_blank'} className={styles['card-btn']}>
                                 Купить
                             </a>
                             <div className={styles['card-prices']}>
