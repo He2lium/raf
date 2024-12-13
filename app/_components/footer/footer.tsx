@@ -31,12 +31,26 @@ export const Footer = () => {
                         </Link>
                     </li>
                     <li className={styles['item']}>
-                        <Link href='#contacts' className={styles['link']}>
+                        <Link href='/contacts' className={styles['link']}>
                             Контакты
                         </Link>
                     </li>
                 </ul>
             </nav>
+            <div className={styles['footer-documents']}>
+                <div className={styles['footer-documents__col']}>
+                    <a target={'_blank'} href={'/user-agreement.pdf'}>Пользовательское соглашение</a>
+                    <a target={'_blank'} href={'/oferta.pdf'}>Публичная оферта</a>
+                </div>
+                <div className={styles['footer-documents__col']}>
+                    <a target={'_blank'} href={'/privacy.pdf'}>Политика защиты персональных данных</a>
+                    <a target={'_blank'} href={'/personal-data.pdf'}>Согласие на обработку персональных данных</a>
+                </div>
+            </div>
+            <div className={styles['footer-appendix']}>
+                <span>© Раф Знает, 2024</span>
+                <a href={'https://reiterovich.online'} target={'_blank'}>Сайт разработан Reiterovich & Lab</a>
+            </div>
         </footer>
     );
 };

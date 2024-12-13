@@ -17,7 +17,7 @@ export const Hero = () => {
                             <motion.div
                                 className={`${styles.block} ${styles['block-sm']}`}
                                 initial={{opacity: 0}}
-                                animate={{opacity: 1, transition: {delay: 5}}}
+                                animate={{opacity: 1, transition: {delay: 4}}}
                             >
                                 <svg
                                     width='30'
@@ -38,7 +38,7 @@ export const Hero = () => {
                             <motion.div
                                 className={`${styles.block} ${styles['block-sm']}`}
                                 initial={{opacity: 0}}
-                                animate={{opacity: 1, transition: {delay: 5.5}}}
+                                animate={{opacity: 1, transition: {delay: 4.5}}}
                             >
                                 <svg
                                     width='30'
@@ -60,7 +60,7 @@ export const Hero = () => {
                             <motion.div
                                 className={`${styles.block} ${styles['block-sm']}`}
                                 initial={{opacity: 0}}
-                                animate={{opacity: 1, transition: {delay: 6}}}
+                                animate={{opacity: 1, transition: {delay: 5}}}
                             >
                                 <svg
                                     width='30'
@@ -87,7 +87,7 @@ export const Hero = () => {
                         <motion.div
                             className={`${styles.block}`}
                             initial={{opacity: 0}}
-                            animate={{opacity: 1, transition: {delay: 5}}}
+                            animate={{opacity: 1, transition: {delay: 4}}}
                         >
                             <p>
                                 Наша команда стремится не просто передать вам теоретические
@@ -120,7 +120,7 @@ export const Hero = () => {
                         <motion.div
                             className={`${styles.block} ${styles.image}`}
                             initial={{opacity: 0}}
-                            animate={{opacity: 1, transition: {delay: 5}}}
+                            animate={{opacity: 1, transition: {delay: 4}}}
                         >
                             <div className={styles['image-shadow']}>
                                 <div/>

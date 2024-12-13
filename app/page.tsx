@@ -4,7 +4,6 @@ import FollowUp from "@/app/_components/intro/follow-up";
 export default function Home() {
     return (
         <>
-            <Header/>
             <Hero/>
             <FollowUp/>
             <Tariffs/>
@@ -14,7 +13,6 @@ export default function Home() {
             <Reviews/>
             <Faq/>
             <EndBanner/>
-            <Footer/>
         </>
     );
 }

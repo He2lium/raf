@@ -86,7 +86,7 @@ export const Header = () => {
                             </li>
                             <li className={styles.navitem}>
                                 <Link
-                                    href='#contacts'
+                                    href='/contacts'
                                     className={styles.navlink}
                                     onClick={handleMenuItemClick}
                                 >

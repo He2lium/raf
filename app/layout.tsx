@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import {Oswald} from 'next/font/google';
 import './globals.css';
 import {Toaster} from 'react-hot-toast'
+import {Footer, Header} from "@/app/_components";
 
 const gilroy = localFont({
     src: [
@@ -47,7 +48,13 @@ export default function RootLayout({
             className={`${gilroy.variable} ${moderustic.variable} ${oswald.variable}`}
         >
         <Toaster/>
-        {children}
+        <div className={'app'}>
+            <Header/>
+            <main className={'app-content'}>
+                {children}
+            </main>
+            <Footer/>
+        </div>
         </body>
         </html>
     );

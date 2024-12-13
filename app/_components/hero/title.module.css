@@ -14,16 +14,11 @@
     white-space: pre-line;
 }
 
-.title::before {
-    content: '';
+.title-icon {
     display: inline-block;
     margin-right: 20px;
     width: 341px;
     aspect-ratio: 341 / 87;
-    background-image: url('/hero-title-icon.svg');
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1351px) {
@@ -31,7 +26,7 @@
         font-size: 80px;
     }
 
-    .title::before {
+    .title-icon {
         width: 280px;
     }
 }
@@ -41,7 +36,7 @@
         font-size: 72px;
     }
 
-    .title::before {
+    .title-icon {
         width: 250px;
     }
 }
@@ -61,13 +56,13 @@
         font-size: 54px;
     }
 
-    .title::before {
+    .title-icon {
         width: 200px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .title::before {
+    .title-icon {
         display: block;
         margin-bottom: 10px;
         width: 180px;
@@ -91,7 +86,7 @@
         letter-spacing: -1.5px;
     }
 
-    .title::before {
+    .title-icon {
         width: 160px;
     }
 }
