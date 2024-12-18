@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 import './globals.css';
-import {Oswald} from "next/dist/compiled/@next/font/dist/google";
+import {Oswald} from "next/font/google";
 import {Metadata} from "next";
 import YandexMetrica from "@/app/_components/yandex-metrica/yandex-metrica";
 import {Toaster} from "react-hot-toast";
@@ -45,6 +45,7 @@ const oswald = Oswald({
 export const metadata: Metadata = {
     title,
     description,
+    metadataBase: new URL('https://rafznaet.ru'),
     keywords: ["коммерческая недвижимость", "жилая недвижимость", "курсы на риэлтора", "стать риэлтором"],
     appleWebApp: {
         title: 'Раф знает!',
