@@ -1,10 +1,10 @@
-import type {Metadata} from 'next';
 import localFont from 'next/font/local';
-import {Oswald} from 'next/font/google';
 import './globals.css';
-import {Toaster} from 'react-hot-toast'
-import {Footer, Header} from "@/app/_components";
+import {Oswald} from "next/dist/compiled/@next/font/dist/google";
+import {Metadata} from "next";
 import YandexMetrica from "@/app/_components/yandex-metrica/yandex-metrica";
+import {Toaster} from "react-hot-toast";
+import {Footer, Header} from "@/app/_components";
 
 const gilroy = localFont({
     src: [
@@ -27,6 +27,15 @@ const moderustic = localFont({
     variable: '--font-moderustic',
 });
 
+const title = 'Раф знает! - Научись зарабатывать на коммерческой недвижимости'
+const description = `
+Овладейте искусством успешных сделок с жилой и коммерческой 
+недвижимостью! Узнайте проверенные стратегии и секреты профессионалов, которые 
+помогут вам эффективно продавать и покупать объекты. Достигайте новых высот 
+в карьере и доходах с реальными работающими подходами!
+`
+
+
 const oswald = Oswald({
     subsets: ['latin', 'cyrillic'],
     weight: ['600'],
@@ -34,8 +43,30 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-    title: 'Раф знает!',
-    description: 'Научись зарабатывать на коммерческой недвижимости!',
+    title,
+    description,
+    keywords: ["коммерческая недвижимость", "жилая недвижимость", "курсы на риэлтора", "стать риэлтором"],
+    appleWebApp: {
+        title: 'Раф знает!',
+    },
+    openGraph: {
+        title,
+        description,
+        url: "https://rafznaet.ru",
+        type: "website",
+        images: [
+            {
+                url: "og.png",
+                width: 1000,
+                height: 525,
+                alt: "Раф знает",
+            },
+        ],
+    },
+    robots: {
+        follow: true,
+        index: true
+    },
 };
 
 export default function RootLayout({
