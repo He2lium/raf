@@ -85,25 +85,27 @@ export function Shorts() {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className={`container ${styles.container}`}>
-            <h2 className='title-1'>Эксклюзив от авторов курса</h2>
-            <section className={styles.slider}>
-                {videos.map((video, index) => (
-                    <div className={styles.posterContainer} onClick={() => {
-                        setOpen(true)
-                        setIndex(index)
-                    }} key={video.title}>
-                        <Image
-                            src={video.poster}
-                            alt={video.title}
-                            sizes={'(max-width: 768px) 84px, 128px'}
-                            className={styles.poster}
-                        />
-                        <div className={styles.posterTitle}>{video.title}</div>
-                    </div>
-                ))}
-            </section>
-            <VideoLightbox open={open} index={index} onClose={() => setOpen(false)}/>
+        <div className='container'>
+            <div className={styles.container}>
+                <h2 className='title-1'>Эксклюзив от авторов курса</h2>
+                <section className={styles.slider}>
+                    {videos.map((video, index) => (
+                        <div className={styles.posterContainer} onClick={() => {
+                            setOpen(true)
+                            setIndex(index)
+                        }} key={video.title}>
+                            <Image
+                                src={video.poster}
+                                alt={video.title}
+                                sizes={'(max-width: 768px) 84px, 128px'}
+                                className={styles.poster}
+                            />
+                            <div className={styles.posterTitle}>{video.title}</div>
+                        </div>
+                    ))}
+                </section>
+                <VideoLightbox open={open} index={index} onClose={() => setOpen(false)}/>
+            </div>
         </div>
     )
 }
