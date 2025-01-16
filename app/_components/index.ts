@@ -12,3 +12,4 @@ export {EndBanner} from './end-banner/end-banner';
 export {Contacts} from './contacts/contacts';
 export {Footer} from './footer/footer';
 export {InvisibleSmartCaptcha} from './captcha/captcha';
+export {Shorts} from './shorts/shorts'
