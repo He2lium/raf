@@ -11,7 +11,7 @@ export const EndBanner = () => {
 						Еще ждешь? <br /> А сделки нет!
 					</h2>
 					<p className={styles['subtitle']}>
-						Стань лушчим агентом по недвижимости в мире!
+						Стань лучшим агентом по недвижимости в мире!
 					</p>
 					<a href='#tariffs' className={styles['btn']}>
 						Выбрать курс!
